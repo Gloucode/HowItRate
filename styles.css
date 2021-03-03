@@ -1,3 +1,4 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 body{
   background-color: #ababab
 }
@@ -10,19 +11,48 @@ h3 {
   text-align: center;
 }
 
-form {
-  background-color: #7a7a7a;
-  width: 100px;
-  height: 70px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: fixed;
+.login-box{
+  width: 280px;
+  position: absolute;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
   transform: translate(-50%, -50%);
+  color: white;
+  
+}
+
+.login-box h1{
+  float: left;
+  font-size: 40px;
+  border-bottom: 6px solid #00688B;
+  margin-bottom: 50px;
+  padding: 13px 0
+}
+
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #00688B;
+}
+
+.textbox i{
+  width: 26px
+  float: left
+  text-align: center;
+}
+
+.textbox input{
+  border: none;
+  outline: none;
+  color: white:
+  font-size: 18px;
+  width: 80px;
+  float: left;
+  margin: 10px;
+  
 }
 
 input {
@@ -163,43 +193,3 @@ svg {
         }
     }
 }
-
-
-/*a.button1{
- display:inline-block;
- padding:0.35em 1.2em;
- border:0.1em solid #FFFFFF;
- margin:0 0.3em 0.3em 0;
- border-radius:0.12em;
- box-sizing: border-box;
- text-decoration:none;
- font-family:fantasy,sans-serif;
- font-weight:300;
- color:#FFFFFF;
- text-align:center;
- transition: all 0.2s;
-}
-a.button1:hover{
- color:#000000;
- background-color:#FFFFFF;
-}
-@media all and (max-width:30em){
- a.button1{
-  display:block;
-  margin:0.4em auto;
- }
-}*/
-
-/*.bouncy{
- animation:bouncy 5s infinite linear;
- position:relative;
-}
-@keyframes bouncy {
- 0%{top:0em}
- 40%{top:0em}
- 43%{top:-0.9em}
- 46%{top:0em}
- 48%{top:-0.4em}
- 50%{top:0em}
- 100%{top:0em;}
-}*/
