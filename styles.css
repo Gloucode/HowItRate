@@ -99,6 +99,19 @@ h3 {
      font-weight: bold;
 }
 
+.datalogin-btn {
+    position: fixed;
+     bottom: 5%;
+     left: 5%;
+     cursor: pointer;
+     width: 120px;
+     height: 55px;
+     border: 0;
+     border-radius: 50px;
+     outline: none;
+     font-weight: bold;
+}
+
 input {
   all: unset;
   border: 3px solid #fff;
