@@ -1,4 +1,6 @@
-    @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+
 body{
   background-color: #1F2833;
 }
@@ -150,7 +152,7 @@ input {
 }*/
 
 .logo {
-  color: #4b61af;
+  color: #5FA8D3;
   text-align: center;
   font-size: 42px;
   font-family: fantasy;
@@ -158,7 +160,7 @@ input {
   font-style: oblique;
   font-weight: 100;
   /*border: 5px groove lightblue;*/
-  text-shadow: 1px 1px 1px #1f2747,
+  text-shadow: 1px 1px 1px #1B4965,
       1px 2px 1px #1f2747,
       1px 3px 1px #1f2747,
       1px 4px 1px #1f2747,
@@ -174,6 +176,12 @@ input {
   1px 30px 60px rgba(16,16,16,0.4);
   /*animation: reveal 2000ms ease-in-out forwards 200ms,
              glow 2500ms linear infinite 2000ms;*/
+}
+
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('myfont.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
 }
 
 /*@keyframes reveal {
@@ -208,7 +216,7 @@ input {
 
 .login-btn {
     font-family: Hack, monospace;
-    background: #8391c9;
+    background: #62B6CB;
     color: #1d1d1d;
     cursor: pointer;
     font-size: 1em;
