@@ -21,5 +21,39 @@
       <button class="search-btn">Search</button>
     </div>
   </div>
+    
+  <button class="catReq-btn" onclick="openForm()">Request Category</button>
+    <!--the button above will be changed when we implement this module-->
+
+    <div class="CatRequest-popup" id="catReqForm">
+        <form action="something" class="form">
+            <!--action in form will be where we send it to go to database-->
+            <h1>Request a category</h1>
+
+            <label for="catName"><b>Catagory Name</b></label>
+            <input type="namebox" placeholder="Enter proposed category name" name="catName" style=width:210px;font-size:14px;
+                
+        required>
+            <p></p>
+            <label for="catDesc"><b>Catagory Description</b></label>
+            <p></p>
+            <textarea id="catDesc" name="catDesc" rows="10" cols="45" wrap="hard" number="250" style="resize:none;" required></textarea>
+
+
+            <button type="submit" class="subReq-btn" onclick="submitReq()">Submit Request</button>
+            <!--Functionality: we need to implement the functino submitReq() which will send the request to a database-->
+            <button type="submit" class="closeReq-btn" onclick="closeForm()">Close</button>
+       </form>
+    </div>
+    <script>
+      function openForm() {
+        document.getElementById("catReqForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("catReqForm").style.display = "none";
+      }
+      </script>
+    
  </body>
 </html>
