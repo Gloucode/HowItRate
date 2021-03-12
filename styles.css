@@ -114,19 +114,6 @@ h3 {
      font-weight: bold;
 }
 
-.loginback-btn {
-  position: fixed;
-   bottom: 171px;
-   left: 54.5%;
-   cursor: pointer;
-   width: 120px;
-   height: 55px;
-   border: 0;
-   border-radius: 50px;
-   outline: none;
-   font-weight: bold;
-}
-
 input {
   all: unset;
   border: 3px solid #fff;
