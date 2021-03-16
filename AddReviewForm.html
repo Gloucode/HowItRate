@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" href = "styles.css">
+    <title>HowItRate</title>
+  </head>
+
+  <style>.AddRating-popup {
+    background-color: #5F9EA0	;
+    padding: 10px 26px;
+    border: 10px solid #00688B;
+    border-radius: 50px;
+    width: 400px;
+    height: 500px;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: none;
+  }
+  
+  .addRat-btn {
+    position: fixed;
+    top: 35%;
+    right: 70%;
+    cursor: pointer;
+    width: 120px;
+    height: 55px;
+    border: 0;
+    border-radius: 50px;
+    outline: none;
+    font-weight: bold;
+  }
+  .closeRat-btn {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    cursor: pointer;
+    width: 120px;
+    height: 55px;
+    border: 0;
+    border-radius: 50px;
+    outline: none;
+    font-weight: bold;
+  }
+  
+  .subRat-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    cursor: pointer;
+    width: 120px;
+    height: 55px;
+    border: 0;
+    border-radius: 50px;
+    outline: none;
+    font-weight: bold;
+  }</style>
+
+<button class="addRat-btn" onclick="openForm()">Add A Rating</button>
+<!--the button above will be changed when we implement this module-->
+
+<div class="AddRating-popup" id="catRatForm">
+    <form action="something" class="form">
+        <!--action in form will be where we send it to go to database-->
+        <h1>Write a Review</h1>
+
+        <label for="ratCatName"><b>Item Name</b></label>
+        <input type="namebox" placeholder="Name of item" name="ratCatName" style=width:210px;font-size:14px;
+            
+    required>
+        <p></p>
+        <label for="ratDesc"><b>Review</b></label>
+        <p></p>
+        <textarea id="catDesc" name="ratDesc" rows="10" cols="45" wrap="hard" number="250" style="resize:none;" required></textarea>
+
+
+        <button type="submit" class="subRat-btn" onclick="submitReq()">Submit Review</button>
+        <!--Functionality: we need to implement the functino submitReq() which will send the request to a database-->
+        <button type="submit" class="closeRat-btn" onclick="closeForm()">Close</button>
+   </form>
+</div>
+<script>
+  function openForm() {
+    document.getElementById("catRatForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("catRatForm").style.display = "none";
+  }
+  </script>
