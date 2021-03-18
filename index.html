@@ -45,6 +45,40 @@
             <button type="submit" class="closeReq-btn" onclick="closeForm()">Close</button>
        </form>
     </div>
+    
+        <button class="addRat-btn" onclick="openRevForm()">Add A Rating</button>
+<!--the button above will be changed when we implement this module-->
+
+    <div class="AddRating-popup" id="catRatForm">
+        <form action="something" class="form">
+            <!--action in form will be where we send it to go to database-->
+            <h1>Write a Review</h1>
+
+
+              <label for="cat" id="cat">Select A Catagory</label>
+              <select name="cat" id="cat">
+                <option value="coffee">Coffee</option>
+                <option value="Wine">Wine</option>
+                <option value="Cannabis">Cannabis</option>
+              </select>
+              <br></br>
+
+            <label for="ratCatName"><b>Item Name</b></label>
+            <input type="namebox" placeholder="Name of item" name="ratCatName" style=width:210px;font-size:14px;
+
+        required>
+            <p></p>
+            <label for="ratDesc"><b>Review</b></label>
+            <p></p>
+            <textarea id="catDesc" name="ratDesc" rows="10" cols="45" wrap="hard" number="250" style="resize:none;" required></textarea>
+
+
+            <button type="submit" class="subRat-btn" onclick="submitRevReq()">Submit Review</button>
+            <!--Functionality: we need to implement the functino submitReq() which will send the request to a database-->
+            <button type="submit" class="closeRat-btn" onclick="closeRevForm()">Close</button>
+      </form>
+    </div>
+    
     <script>
       function openForm() {
         document.getElementById("catReqForm").style.display = "block";
@@ -53,6 +87,15 @@
       function closeForm() {
         document.getElementById("catReqForm").style.display = "none";
       }
+      
+      function openRevForm() {
+        document.getElementById("catRatForm").style.display = "block";
+      }
+      
+      function closeRevForm() {
+        document.getElementById("catRatForm").style.display = "none";
+      }
+      
       </script>
     
    <!-- The core Firebase JS SDK is always required and must be listed first -->
