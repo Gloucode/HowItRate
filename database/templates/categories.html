@@ -1,0 +1,10 @@
+<!doctype html>
+  <table border = 1>
+    {% for cat in result %}
+
+    <form action="http://localhost:5000/categories" method="POST">
+      <p><input type="submit" name= "form" value={{cat}}></p>
+    </form>
+
+    {% endfor %}
+ </table>
