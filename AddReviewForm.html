@@ -38,16 +38,13 @@ the button above will be changed when we implement this module-->
 
             <button type="submit" class="subRat-btn" onclick="submitRevReq()">Submit Review</button>
             <!--Functionality: we need to implement the functino submitReq() which will send the request to a database-->
-            <button class="closeRat-btn" type="submit">Back</button>
+            <button class="closeRat-btn" type="button" onclick="back()">Back</button>
             <a href="http://howitrate.tk" class="loginback-btn"></a>
       </form>
   </div>
 <script>
-  function openForm() {
-    document.getElementById("catRatForm").style.display = "block";
+  function back() {
+    window.location.href="http://howitrate.tk"
   }
   
-  function closeForm() {
-    document.getElementById("catRatForm").style.display = "none";
-  }
   </script>
