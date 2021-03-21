@@ -25,7 +25,7 @@
   //E-Mail fucntion will send email to user
 function send(){
 //*
-import nodemailer from 'nodemailer';
+var nodemailer = require('nodemailer');
 //const { readFile } = require('fs');
 const transporter = nodemailer.createTransport({
     service: 'hotmail',
