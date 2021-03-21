@@ -284,6 +284,7 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  display: block;
 }
 
 .addRat-btn {
