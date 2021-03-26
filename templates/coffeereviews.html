@@ -1,0 +1,10 @@
+<!doctype html>
+  <table border = 1>
+
+    <form action="http://localhost:5000/coffeereviews" method="POST">
+    {% for review in result %}
+        <p>{{review}}</p>
+    </form>
+
+    {% endfor %}
+ </table>

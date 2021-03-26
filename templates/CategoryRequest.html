@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" href = "styles.css">
+    <title>HowItRate</title>
+  </head>
+
+  <body>
+
+    <div class="CatRequest-popup" id="catReqForm">
+        <form action="http://localhost:5000/" class="form", method="POST">
+            <!--action in form will be where we send it to go to database-->
+            <h1>Request a category</h1>
+
+            <label for="catName"><b>Catagory Name</b></label>
+            <input type="namebox" placeholder="Enter proposed category name" name="catName" style=width:210px;font-size:14px;
+        required>
+            <p></p>
+            <label for="catDesc"><b>Catagory Description</b></label>
+            <p></p>
+            <textarea id="catDesc" name="catDesc" rows="10" cols="45" wrap="hard" number="250" style="resize:none;"></textarea>
+
+
+            <button type="submit" class="subReq-btn" onclick="submitReq()">Submit Request</button>
+            <!--Functionality: we need to implement the functino submitReq() which will send the request to a database-->
+            <button class="closeReq-btn" type="button" onclick="back()">Back</button>
+            <a href="http://howitrate.tk" class="loginback-btn"></a>
+       </form>
+    </div>
+
+    <script>
+      function back() {
+        window.location.href="http://howitrate.tk"
+      }
+        </script>
+
+  </body>
+</html>

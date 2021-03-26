@@ -1,0 +1,21 @@
+<!doctype html>
+<table border = 1>
+
+<form action="http://localhost:5000/coffee" method="POST">
+  <p><input type="text" name="review"/>
+    <input type="submit" name= "form" value="Submit" />
+
+    {% for review in result %}
+        <p>{{review}}</p>
+    </form>
+
+    {% endfor %}
+
+  </p>
+</form>
+
+<form action="http://localhost:5000/coffeereviews" method="POST">
+    <input type="submit" name= "form" value="Show reviews" />
+</form>
+
+</table>
