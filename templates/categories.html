@@ -1,5 +1,26 @@
-<!doctype html>
-  <table border = 1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" href = "/static/styles.css">
+  </head>
+  <body>
+
+    <button class="subCat-btn" onclick="openSubForm()" >Subscribe to Category</button>
+
+    <div class="subCat-popup" id="catSubForm">
+      <form action="something" class="form">
+        <h1>Subscribe to this Categoy</h1>
+
+        <label for="email" id="email">Enter your email below to recieve updates</label>
+        <br></br>
+        <input type="namebox" placeholder="Email" name="email" style=width:210px;font-size:14px; required>
+
+        <button class="closeReq-btn" type="button" onclick="closeSubForm()">Close</button>
+        <button type="submit" class="subReq-btn" onclick="submitReq()">Submit</button>
+      </form>
+    </div>
+
     {% for cat in result %}
 
     <form action="http://localhost:5000/{{cat}}" method="POST">
@@ -7,4 +28,18 @@
     </form>
 
     {% endfor %}
- </table>
+
+    
+  </body>
+
+  <script>
+    function openSubForm() {
+      document.getElementById("catSubForm").style.display = "block";
+    }
+    
+    function closeSubForm() {
+      document.getElementById("catSubForm").style.display = "none";
+    }
+  </script>
+
+
