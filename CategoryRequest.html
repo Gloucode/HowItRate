@@ -1,80 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Catagory Request PopUp</title>
-    <link rel="stylesheet" href="/styles.css">
-    
-    <style>    
-    .CatRequest-popup {
-        background-color: #5F9EA0	;
-        padding: 10px 26px;
-        border: 10px solid #00688B;
-        border-radius: 50px;
-        width: 400px;
-        height: 500px;
-        position: fixed;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        display: none;
-      }
-
-    .catReq-btn {
-        position: fixed;
-        top: 5%;
-        right: 5%;
-        cursor: pointer;
-        width: 120px;
-        height: 55px;
-        border: 0;
-        border-radius: 50px;
-        outline: none;
-        font-weight: bold;
-}
-    .closeReq-btn {
-        position: fixed;
-        bottom: 5%;
-        left: 5%;
-        cursor: pointer;
-        width: 120px;
-        height: 55px;
-        border: 0;
-        border-radius: 50px;
-        outline: none;
-        font-weight: bold;
-}
-
-    .subReq-btn {
-        position: fixed;
-        bottom: 5%;
-        right: 5%;
-        cursor: pointer;
-        width: 120px;
-        height: 55px;
-        border: 0;
-        border-radius: 50px;
-        outline: none;
-        font-weight: bold;
-}
-
-    .namebox input{
-        border: none;
-        outline: none;
-        bottom: 50%;
-        color: rgb(196, 196, 196);
-        font-size: 18px;
-        width: 100px;
-        float: middle;
-        margin: 0 10px; 
-}
-      </style>
-
+    <link rel = "stylesheet" href = "styles.css">
+    <title>HowItRate</title>
   </head>
-  <body>
 
-    <button class="catReq-btn" onclick="openForm()">Request Category</button>
-    <!--the button above will be changed when we implement this module-->
+  <body>
 
     <div class="CatRequest-popup" id="catReqForm">
         <form action="something" class="form">
@@ -82,8 +14,7 @@
             <h1>Request a category</h1>
 
             <label for="catName"><b>Catagory Name</b></label>
-            <input type="namebox" placeholder="Enter proposed category name" name="catName"
-                style=width:250;
+            <input type="namebox" placeholder="Enter proposed category name" name="catName" style=width:210px;font-size:14px;
         required>
             <p></p>
             <label for="catDesc"><b>Catagory Description</b></label>
@@ -93,18 +24,15 @@
 
             <button type="submit" class="subReq-btn" onclick="submitReq()">Submit Request</button>
             <!--Functionality: we need to implement the functino submitReq() which will send the request to a database-->
-            <button type="submit" class="closeReq-btn" onclick="closeForm()">Close</button>
+            <button class="closeReq-btn" type="button" onclick="back()">Back</button>
+            <a href="http://howitrate.tk" class="loginback-btn"></a>
        </form>
     </div>
 
     <script>
-        function openForm() {
-          document.getElementById("catReqForm").style.display = "block";
-        }
-        
-        function closeForm() {
-          document.getElementById("catReqForm").style.display = "none";
-        }
+      function back() {
+        window.location.href="http://howitrate.tk"
+      }
         </script>
           
   </body>
