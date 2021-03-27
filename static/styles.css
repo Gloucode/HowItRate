@@ -272,6 +272,19 @@ input {
     }
 }
 
+.catLink-btn {
+  position: relative;
+  left: 37%;
+  cursor: pointer;
+  width: 300px;
+  height: 55px;
+  border: 0;
+  border-radius: 150px;
+  outline: none;
+  font-weight: bold;
+}
+
+
 .subCat-btn {
   position: fixed;
   top: 5%;
