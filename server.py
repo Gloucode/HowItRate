@@ -81,6 +81,14 @@ def coffee():
 
     #whenever coffee button is pressed it is added to database, have to fix
 
+    #Show reviews
+    reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/Reviews', '')
+
+    reviews_l = []
+
+    for i in reviews:
+        reviews_l.append(reviews.get(i).get('Review').get('review'))
+
     #Retrieve Review
     rev = request.form
 
@@ -92,10 +100,10 @@ def coffee():
 
 
 
-    return render_template("coffee.html")
+    return render_template("coffee.html", result=reviews_l)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5000)
 
 
 '''<form action="http://localhost:5000/categories" method="POST">
