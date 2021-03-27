@@ -46,12 +46,13 @@
        </form>
     </div>
 
-    <!--show categories button-->
-    <form action="http://localhost:5000/categories" method="GET">
+    <div id="showCatbut">
+      <form action="http://localhost:5000/categories" method="GET">
         <button class="addRat-btn" type="submit" name= "form" value="Show Categories">Show Categories</button>
-    </form>
+      </form>
+    </div>
 
-
+   
 <!--the button above will be changed when we implement this module-->
 
 
@@ -59,10 +60,12 @@
     <script>
       function openForm() {
         document.getElementById("catReqForm").style.display = "block";
+        document.getElementById("showCatbut").style.display = "none";
       }
 
       function closeForm() {
         document.getElementById("catReqForm").style.display = "none";
+        document.getElementById("showCatbut").style.display = "block";
       }
 
       function openRevForm() {
