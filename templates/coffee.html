@@ -1,20 +1,62 @@
-<!doctype html>
-<table border = 1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" href = "/static/styles.css">
+  </head>
+  <body>
 
-<form action="http://localhost:5000/coffee" method="POST">
-  <p><input type="text" name="review"/>
-    <input type="submit" name= "form" value="Submit" />
+    <button class="subCat-btn" onclick="openForm()" >Write a review</button>
 
-  </p>
-</form>
+    <div class="AddRating-popup" id="catRatForm">
+      <form action="http://localhost:5000/coffee" method="POST">
+          <!--action in form will be where we send it to go to database-->
+          <h1>Write a Review</h1>
 
-<form action="http://localhost:5000/coffeereviews" method="POST">
-    <input type="submit" name= "form" value="Show reviews" />
-  
-  {% for review in result %}
-        <p>{{review}}</p>
+            <!--Update using python for loop when database all set up-->
+
+
+          <label for="ratCatName"><b>Item Name</b></label>
+          <input type="namebox" placeholder="Name of item" name="ratCatName" style=width:210px;font-size:14px; required>
+          <p></p>
+          <label for="ratDesc"><b>Review</b></label>
+          <p></p>
+          <textarea id="catDesc" name="ratDesc" rows="10" cols="45" wrap="hard" number="250" style="resize:none;" required></textarea>
+
+
+          <button type="submit" class="subRat-btn" name= "form" value="Submit">Submit Review</button>
+          <!--Functionality: we need to implement the functino submitReq() which will send the request to a database-->
+          <button class="closeRat-btn" type="button" onclick="closeForm()">Back</button>
+      </form>
+    </div>  
+
+
+  <div>
+    <form action="http://localhost:5000/coffee" method="POST">
+      <p><input type="text" name="review"/>
+        <input type="submit" name= "form" value="Submit" />
+
+      </p>
     </form>
+  </div>  
 
-    {% endfor %}
+  <form action="http://localhost:5000/coffeereviews" method="POST">
+      <input type="submit" name= "form" value="Show reviews" />
+    
+    {% for review in result %}
+          <p>{{review}}</p>
+      </form>
 
-</table>
+      {% endfor %}
+
+  <script>
+    function openForm() {
+      document.getElementById("catRatForm").style.display = "block";
+    }
+        
+    function closeForm() {
+      document.getElementById("catRatForm").style.display = "none";
+    }
+  </script>
+
+
