@@ -63,7 +63,7 @@ h3 {
   width: 100%;
   overflow: hidden;
   font-size: 20px;
-  padding 8px 0;
+  padding: 8px 0;
   margin: 40px 0;
   border-bottom: 1px solid #00688B;
   padding-above: 50px 0;
@@ -71,7 +71,7 @@ h3 {
 
 .textbox i{
   width: 10px
-  float: left
+  float: left;
   text-align: right;
   vertical-align: right;
   height: 5px;
@@ -80,7 +80,7 @@ h3 {
 .textbox input{
   border: none;
   outline: none;
-  color: white:
+  color: white;
   font-size: 18px;
   width: 350px;
   float: middle;
@@ -272,21 +272,9 @@ input {
     }
 }
 
-.catLink-btn {
-  position: relative;
-  left: 37%;
-  cursor: pointer;
-  width: 300px;
-  height: 55px;
-  border: 0;
-  border-radius: 150px;
-  outline: none;
-  font-weight: bold;
-}
-
 
 .subCat-btn {
-  position: fixed;
+  position: relative;
   top: 5%;
   right: 10%;
   cursor: pointer;
@@ -311,6 +299,21 @@ input {
   transform: translate(-50%, -50%);
   color: white;
   display: none;
+}
+
+.rat-popup {
+  background-color: #5F9EA0	;
+  padding: 10px 26px;
+  border: 10px solid #00688B;
+  border-radius: 50px;
+  width: 400px;
+  height: 300px;
+  position: relative;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: block;
 }
 
 .AddRating-popup {
@@ -379,6 +382,18 @@ input {
   transform: translate(-50%, -50%);
   color: white;
   display: none;
+}
+
+.catLink-btn {
+  position: relative;
+  left: 37%;
+  cursor: pointer;
+  width: 300px;
+  height: 55px;
+  border: 0;
+  border-radius: 150px;
+  outline: none;
+  font-weight: bold;
 }
 
 .catReq-btn {
