@@ -82,13 +82,12 @@ def coffee():
     #whenever coffee button is pressed it is added to database, have to fix
     reviews_l = []
     names_l = []
-    print(reviews)
     if (reviews != None):
         for i in reviews:
-            print(reviews.get(i).get('Reviews').get('Review'))
-            reviews_l.append(reviews.get(i).get('Reviews').get('Review'))
-            names_l.append(reviews.get(i).get('Reviews').get('Name'))
-
+            reviews_l.append(( reviews.get(i).get('Review') , reviews.get(i).get('Name') ))
+            #reviews_l.append(reviews.get(i).get('Review'))
+            #names_l.append(reviews.get(i).get('Name'))
+    print(reviews_l)
     #Retrieve Review
     rev = request.form.get('ratDesc')
     name =  request.form.get('ratCatName')
@@ -110,33 +109,6 @@ if __name__ == '__main__':
 '''<form action="http://localhost:5000/categories" method="POST">
 <p><input type="submit" name= "form" value={{cat}}></p>
 </form>'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
