@@ -23,7 +23,7 @@
   </div>
 
   <button class="catReq-btn" onclick="openForm()">Request Category</button>
-    <!--the button above will be changed when we implement this module-->
+
 
     <div class="CatRequest-popup" id="catReqForm">
         <form action="http://localhost:5000/" class="form" method="POST">
@@ -44,10 +44,11 @@
             <!--Functionality: we need to implement the functino submitReq() which will send the request to a database-->
             <button type="submit" class="closeReq-btn" onclick="closeForm()">Close</button>
        </form>
-    </div>
+      </div>
 
+    <!--show categories button-->
     <div id="showCatbut">
-      <form action="http://localhost:5000/categories" method="GET">
+      <form action="http://localhost:5000/categories" method="POST">
         <button class="addRat-btn" type="submit" name= "form" value="Show Categories">Show Categories</button>
       </form>
     </div>
