@@ -78,32 +78,33 @@ def coffeereviews():
 #where to go to post review about coffee
 @app.route('/coffee', methods=['POST'])
 def coffee():
-
-    #whenever coffee button is pressed it is added to database, have to fix
-
-    #Show reviews
     reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/Reviews', '')
-
+    #whenever coffee button is pressed it is added to database, have to fix
     reviews_l = []
-
-    for i in reviews:
-        reviews_l.append(reviews.get(i).get('Review').get('review'))
+    names_l = []
+    print(reviews)
+    if (reviews != None):
+        for i in reviews:
+            print(reviews.get(i).get('Reviews').get('Review'))
+            reviews_l.append(reviews.get(i).get('Reviews').get('Review'))
+            names_l.append(reviews.get(i).get('Reviews').get('Name'))
 
     #Retrieve Review
-    rev = request.form
+    rev = request.form.get('ratDesc')
+    name =  request.form.get('ratCatName')
 
-    if (rev.get('form') != 'coffee'):
-        data_to_upload = {
-            'Review' : rev
-        }
-        FBConn.post('/Reviews/', data_to_upload)
-
-
+    
+    rev_to_upload = {
+        'Review' : rev,
+        'Name' : name
+    }
+    FBConn.post('/Reviews/', rev_to_upload)
+    
 
     return render_template("coffee.html", result=reviews_l)
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(debug=True)
 
 
 '''<form action="http://localhost:5000/categories" method="POST">
