@@ -2,8 +2,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel = "stylesheet" href = "/static/styles.css">
+    <link rel = "stylesheet" href = "../static/styles.css">
   </head>
+  <style>
+    .rat-popup {
+      background-color: #5F9EA0	;
+      padding: 10px 26px;
+      border: 10px solid #00688B;
+      border-radius: 50px;
+      width: 300px;
+      height: 150px;
+      position: relative;
+      top: 200px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      display: block;
+    }
+  </style>
   <body>
 
     <button class="subCat-btn" onclick="openForm()" >Write a review</button>
@@ -31,31 +47,55 @@
     </div>  
 
 
-  <div>
-    <form action="http://localhost:5000/coffee" method="POST">
-      <p><input type="text" name="review"/>
-        <input type="submit" name= "form" value="Submit" />
+    <button class="subCat-btn" onclick="openSubForm()" style="top:15%">Subscribe to Category</button>
 
-      </p>
-    </form>
-  </div>  
+    <div class="subCat-popup" id="catSubForm">
+      <form action="something" class="aform">
+        <h1>Subscribe to this Category</h1>
 
-  <form action="http://localhost:5000/coffeereviews" method="POST">
-      <input type="submit" name= "form" value="Show reviews" />
-    
-    {% for review in result %}
-          <p>{{review}}</p>
+        <label for="email" id="email">Enter your email below to recieve updates</label>
+        <br></br>
+        <input type="namebox" placeholder="Email" name="email" style=width:210px;font-size:14px; required>
+
+        <button class="closeReq-btn" type="button" onclick="closeSubForm()">Close</button>
+        <button type="submit" class="subReq-btn" onclick="submitReq()">Submit</button>
       </form>
+    </div>
+    
+  <div id="revs">
+    {% for review in result %}
 
-      {% endfor %}
+      <div class="rat-popup">
+        <label><b>Item Name:</b></label>
+        <button class="catLink-btn" style="top:{{(result.index(review) )}}px">{{review[1]}}</button>
+        <br></br>
+        <label><b>Review:</b></label>
+        <p>{{review[0]}}</p>
+      </div>  
+    {% endfor %}
+
+  </div>
+  
 
   <script>
     function openForm() {
       document.getElementById("catRatForm").style.display = "block";
+      document.getElementById("revs").style.display = "none";
     }
         
     function closeForm() {
       document.getElementById("catRatForm").style.display = "none";
+      document.getElementById("revs").style.display = "block";
+    }
+
+    function openSubForm() {
+      document.getElementById("catSubForm").style.display = "block";
+      document.getElementById("revs").style.display = "none";
+    }
+    
+    function closeSubForm() {
+      document.getElementById("catSubForm").style.display = "none";
+      document.getElementById("revs").style.display = "block";
     }
   </script>
 
