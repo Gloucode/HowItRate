@@ -19,11 +19,26 @@
       color: white;
       display: block;
     }
+
+  .subCat-btn {
+    position: relative;
+    top: 5%;
+    left: 80%;
+    cursor: pointer;
+    width: 120px;
+    height: 55px;
+    border: 0;
+    border-radius: 50px;
+    outline: none;
+    font-weight: bold;
+  } 
+
+
   </style>
   <body>
-
+    <div>
     <button class="subCat-btn" onclick="openForm()" >Write a review</button>
-
+    </div>
     <div class="AddRating-popup" id="catRatForm">
       <form action="http://localhost:5000/coffee" method="POST">
           <!--action in form will be where we send it to go to database-->
@@ -46,8 +61,9 @@
       </form>
     </div>  
 
-
-    <button class="subCat-btn" onclick="openSubForm()" style="top:15%">Subscribe to Category</button>
+    <div>
+    <button class="subCat-btn" onclick="openSubForm()" style="top:20px">Subscribe to Category</button>
+    </div>
 
     <div class="subCat-popup" id="catSubForm">
       <form action="something" class="aform">
@@ -63,11 +79,12 @@
     </div>
     
   <div id="revs">
+    
     {% for review in result %}
 
       <div class="rat-popup">
         <label><b>Item Name:</b></label>
-        <button class="catLink-btn" style="top:{{(result.index(review) )}}px">{{review[1]}}</button>
+        <button  style="top:{{(result.index(review) )}}px">{{review[1]}}</button>
         <br></br>
         <label><b>Review:</b></label>
         <p>{{review[0]}}</p>
@@ -81,6 +98,7 @@
     function openForm() {
       document.getElementById("catRatForm").style.display = "block";
       document.getElementById("revs").style.display = "none";
+      document.getElementById("catSubForm").style.display = "none";
     }
         
     function closeForm() {
@@ -91,6 +109,7 @@
     function openSubForm() {
       document.getElementById("catSubForm").style.display = "block";
       document.getElementById("revs").style.display = "none";
+      document.getElementById("catRatForm").style.display = "none";
     }
     
     function closeSubForm() {
