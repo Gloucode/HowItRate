@@ -85,7 +85,7 @@ h3 {
   width: 350px;
   float: middle;
   margin: 0 10px;
-  
+
 }
 
 .signup-btn {
@@ -297,12 +297,12 @@ input {
   border-radius: 50px;
   outline: none;
   font-weight: bold;
-} 
+}
 
 .subCat-popup {
-  background-color: #5F9EA0	;
+  background-color: #5FA8D3	;
   padding: 10px 26px;
-  border: 10px solid #00688B;
+  border: 10px solid #32586e;
   border-radius: 50px;
   width: 400px;
   height: 300px;
@@ -315,12 +315,12 @@ input {
 }
 
 .rat-popup {
-  background-color: #5F9EA0	;
+  background-color: #5FA8D3	;
   padding: 10px 26px;
-  border: 10px solid #00688B;
+  border: 10px solid #32586e;
   border-radius: 50px;
-  width: 350px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
   position: relative;
   top: 45%;
   left: 50%;
@@ -383,9 +383,9 @@ input {
 }
 
 .CatRequest-popup {
-  background-color: #5F9EA0	;
+  background-color: #5FA8D3	;
   padding: 10px 26px;
-  border: 10px solid #00688B;
+  border: 10px solid #32586e;
   border-radius: 50px;
   width: 400px;
   height: 500px;
@@ -455,6 +455,6 @@ input {
   font-size: 14px;
   width: 100px;
   float: middle;
-  margin: 0 10px; 
-  
+  margin: 0 10px;
+
 }
