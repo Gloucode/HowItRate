@@ -16,17 +16,13 @@
       <div>
         <button class="login-btn" onclick="location.href='http://howitrate.tk/login';" value="Go to Log In">Log In</button>
       </div>
-    <div class="wrapper">
-      <input type="search" class="input" placeholder="Search...">
-      <button class="search-btn">Search</button>
-    </div>
   </div>
 
   <button class="catReq-btn" onclick="openForm()">Request Category</button>
 
 
     <div class="CatRequest-popup" id="catReqForm">
-        <form action="http://localhost:5000/" class="form" method="POST">
+        <form action="http://flask-env2.eba-3thm7fka.us-east-2.elasticbeanstalk.com/" class="form" method="POST">
             <!--action in form will be where we send it to go to database-->
             <h1>Request a category</h1>
 
@@ -48,12 +44,12 @@
 
     <!--show categories button-->
     <div id="showCatbut">
-      <form action="http://localhost:5000/categories" method="POST">
+      <form action="http://flask-env2.eba-3thm7fka.us-east-2.elasticbeanstalk.com/categories" method="POST">
         <button class="addRat-btn" type="submit" name= "form" value="Show Categories">Show Categories</button>
       </form>
     </div>
 
-   
+
 <!--the button above will be changed when we implement this module-->
 
 
