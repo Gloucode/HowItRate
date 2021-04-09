@@ -22,7 +22,7 @@
 
     <div>
 
-      <button class="back-btn" onclick="location.href='http://flask-env2.eba-3thm7fka.us-east-2.elasticbeanstalk.com/';">Back</button>
+      <button class="back-btn" onclick="location.href='http://flask-env3.eba-3thm7fka.us-east-2.elasticbeanstalk.com/';">Back</button>
     </div>
 
     <div>
@@ -30,7 +30,7 @@
         <title>HowItRate</title>
 
       {% for cat in result %}
-        <form action="http://flask-env2.eba-3thm7fka.us-east-2.elasticbeanstalk.com/{{cat}}" method="POST">
+        <form action="http://flask-env3.eba-3thm7fka.us-east-2.elasticbeanstalk.com/{{cat}}" method="POST">
             <button style="top:{{100 + (result.index(cat) * 50)}}px" class="catLink-btn " type="submit" name= "form"
               value={{cat.capitalize()}}>{{cat.capitalize()}}</button>
 
