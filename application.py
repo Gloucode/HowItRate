@@ -86,7 +86,7 @@ def coffee():
     #get the reviews for coffee from the database
     try:
         reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/Reviews', '')
-    except:
+    except Exception:
         #If it cannot then go back to home page
         print("It seems as though firebase is down")
         return render_template("index.html")
@@ -119,7 +119,7 @@ def food():
     #get the reviews for coffee from the database
     try:
         reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/FoodReviews', '')
-    except:
+    except Exception:
         #If it cannot then go back to home page
         print("It seems as though firebase is down...")
         return render_template("index.html")
@@ -152,7 +152,7 @@ def wine():
     #get the reviews for coffee from the database
     try:
         reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/WineReviews', '')
-    except:
+    except Exception:
         #If it cannot then go back to home page
         print("It seems as though firebase is down...")
         return render_template("index.html")
@@ -185,7 +185,7 @@ def shoes():
     #get the reviews for coffee from the database
     try:
         reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/ShoesReviews', '')
-    except:
+    except Exception:
         #If it cannot then go back to home page
         print("It seems as though firebase is down...")
         return render_template("index.html")
