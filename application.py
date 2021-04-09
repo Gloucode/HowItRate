@@ -168,7 +168,7 @@ def food():
     email_to_upload = {
         'Email' : email_u
     }
-    FBConn.post('/EmailsCoffee/', email_to_upload)
+    FBConn.post('/EmailsFood/', email_to_upload)
 
     reviews_l = []
     names_l = []
@@ -181,7 +181,7 @@ def food():
     name =  request.form.get('ratCatName')
 
     #-------------get emails from Firebase-------------
-    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsCoffee', '')
+    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsFood', '')
     emails_l = []
     if (emails_db != None):
         for i in emails_db:
@@ -190,7 +190,7 @@ def food():
     #-------------send email to subscribed users-------------
     if rev != None:
         str_email = "Item Name: " + name + "\nReview: " + rev
-        subject = "A new review in coffee has been posted."
+        subject = "A new review in food has been posted."
         msg = Message(body=str_email,
                       sender= 'howitrate@hotmail.com',
                       recipients=emails_l,
@@ -225,7 +225,7 @@ def wine():
     email_to_upload = {
         'Email' : email_u
     }
-    FBConn.post('/EmailsCoffee/', email_to_upload)
+    FBConn.post('/EmailsWine/', email_to_upload)
 
     reviews_l = []
     names_l = []
@@ -238,7 +238,7 @@ def wine():
     name =  request.form.get('ratCatName')
 
     #-------------get emails from Firebase-------------
-    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsCoffee', '')
+    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsWine', '')
     emails_l = []
     if (emails_db != None):
         for i in emails_db:
@@ -247,7 +247,7 @@ def wine():
     #-------------send email to subscribed users-------------
     if rev != None:
         str_email = "Item Name: " + name + "\nReview: " + rev
-        subject = "A new review in coffee has been posted."
+        subject = "A new review in wine has been posted."
         msg = Message(body=str_email,
                       sender= 'howitrate@hotmail.com',
                       recipients=emails_l,
@@ -282,7 +282,7 @@ def shoes():
     email_to_upload = {
         'Email' : email_u
     }
-    FBConn.post('/EmailsCoffee/', email_to_upload)
+    FBConn.post('/EmailsShoes/', email_to_upload)
 
     reviews_l = []
     names_l = []
@@ -295,7 +295,7 @@ def shoes():
     name =  request.form.get('ratCatName')
 
     #-------------get emails from Firebase-------------
-    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsCoffee', '')
+    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsShoes', '')
     emails_l = []
     if (emails_db != None):
         for i in emails_db:
@@ -304,7 +304,7 @@ def shoes():
     #-------------send email to subscribed users-------------
     if rev != None:
         str_email = "Item Name: " + name + "\nReview: " + rev
-        subject = "A new review in coffee has been posted."
+        subject = "A new review in shoes has been posted."
         msg = Message(body=str_email,
                       sender= 'howitrate@hotmail.com',
                       recipients=emails_l,
@@ -333,4 +333,5 @@ if __name__ == '__main__':
 
 
 #bottom
+
 
