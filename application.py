@@ -2,12 +2,24 @@ from flask import Flask, render_template
 from firebase import firebase
 from firebase_admin import db
 from flask import request
+from flask_mail import Mail, Message
 
 #"{{ url_for('handle_data') }}" //instead of typing out entire url
 
 FBConn = firebase.FirebaseApplication('https://howitrate-user-db-default-rtdb.firebaseio.com/', None)
 
 application = Flask(__name__)
+
+application.config['MAIL_SERVER'] = 'smtp-mail.outlook.com'
+application.config['MAIL_PORT'] = 587
+application.config['MAIL_USE_TLS'] = True
+application.config['MAIL_USE_SSL'] = False
+application.config['MAIL_USERNAME'] = 'howitrate@hotmail.com'
+application.config['MAIL_PASSWORD'] = 'Orange!1'
+application.config['MAIL_DEFAULT_SENDER'] = 'howitrate@hotmail.com'
+application.config['MAIL_DEBUG'] = False
+
+mail = Mail(application)
 
 categories = []
 
@@ -86,10 +98,18 @@ def coffee():
     #get the reviews for coffee from the database
     try:
         reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/Reviews', '')
-    except Exception:
+    except:
         #If it cannot then go back to home page
         print("It seems as though firebase is down")
         return render_template("index.html")
+
+    #-------------get email from form-------------
+    email_u = request.form.get('email')
+    email_to_upload = {
+        'Email' : email_u
+    }
+    FBConn.post('/EmailsCoffee/', email_to_upload)
+    #print(email_u)
 
     reviews_l = []
     names_l = []
@@ -100,6 +120,25 @@ def coffee():
     #Retrieve Review
     rev = request.form.get('ratDesc')
     name =  request.form.get('ratCatName')
+
+    #-------------get emails from Firebase-------------
+    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsCoffee', '')
+    emails_l = []
+    if (emails_db != None):
+        for i in emails_db:
+            emails_l.append(emails_db.get(i).get('Email'))
+
+    #-------------send email to subscribed users-------------
+    if rev != None:
+        str_email = "Item Name: " + name + "\nReview: " + rev
+        subject = "A new review in coffee has been posted."
+        msg = Message(body=str_email,
+                      sender= 'howitrate@hotmail.com',
+                      recipients=emails_l,
+                      subject=subject)
+        mail.send(msg)
+        #print("sent")
+
 
     #Create user review into dictionary
     rev_to_upload = {
@@ -119,10 +158,17 @@ def food():
     #get the reviews for coffee from the database
     try:
         reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/FoodReviews', '')
-    except Exception:
+    except:
         #If it cannot then go back to home page
         print("It seems as though firebase is down...")
         return render_template("index.html")
+
+    #-------------get email from form-------------
+    email_u = request.form.get('email')
+    email_to_upload = {
+        'Email' : email_u
+    }
+    FBConn.post('/EmailsCoffee/', email_to_upload)
 
     reviews_l = []
     names_l = []
@@ -133,6 +179,23 @@ def food():
     #Retrieve Review
     rev = request.form.get('ratDesc')
     name =  request.form.get('ratCatName')
+
+    #-------------get emails from Firebase-------------
+    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsCoffee', '')
+    emails_l = []
+    if (emails_db != None):
+        for i in emails_db:
+            emails_l.append(emails_db.get(i).get('Email'))
+
+    #-------------send email to subscribed users-------------
+    if rev != None:
+        str_email = "Item Name: " + name + "\nReview: " + rev
+        subject = "A new review in coffee has been posted."
+        msg = Message(body=str_email,
+                      sender= 'howitrate@hotmail.com',
+                      recipients=emails_l,
+                      subject=subject)
+        mail.send(msg)
 
     #Create user review into dictionary
     rev_to_upload = {
@@ -152,10 +215,17 @@ def wine():
     #get the reviews for coffee from the database
     try:
         reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/WineReviews', '')
-    except Exception:
+    except:
         #If it cannot then go back to home page
         print("It seems as though firebase is down...")
         return render_template("index.html")
+
+    #-------------get email from form-------------
+    email_u = request.form.get('email')
+    email_to_upload = {
+        'Email' : email_u
+    }
+    FBConn.post('/EmailsCoffee/', email_to_upload)
 
     reviews_l = []
     names_l = []
@@ -166,6 +236,23 @@ def wine():
     #Retrieve Review
     rev = request.form.get('ratDesc')
     name =  request.form.get('ratCatName')
+
+    #-------------get emails from Firebase-------------
+    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsCoffee', '')
+    emails_l = []
+    if (emails_db != None):
+        for i in emails_db:
+            emails_l.append(emails_db.get(i).get('Email'))
+
+    #-------------send email to subscribed users-------------
+    if rev != None:
+        str_email = "Item Name: " + name + "\nReview: " + rev
+        subject = "A new review in coffee has been posted."
+        msg = Message(body=str_email,
+                      sender= 'howitrate@hotmail.com',
+                      recipients=emails_l,
+                      subject=subject)
+        mail.send(msg)
 
     #Create user review into dictionary
     rev_to_upload = {
@@ -185,10 +272,17 @@ def shoes():
     #get the reviews for coffee from the database
     try:
         reviews = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/ShoesReviews', '')
-    except Exception:
+    except:
         #If it cannot then go back to home page
         print("It seems as though firebase is down...")
         return render_template("index.html")
+
+    #-------------get email from form-------------
+    email_u = request.form.get('email')
+    email_to_upload = {
+        'Email' : email_u
+    }
+    FBConn.post('/EmailsCoffee/', email_to_upload)
 
     reviews_l = []
     names_l = []
@@ -199,6 +293,23 @@ def shoes():
     #Retrieve Review
     rev = request.form.get('ratDesc')
     name =  request.form.get('ratCatName')
+
+    #-------------get emails from Firebase-------------
+    emails_db = FBConn.get('https://howitrate-user-db-default-rtdb.firebaseio.com/EmailsCoffee', '')
+    emails_l = []
+    if (emails_db != None):
+        for i in emails_db:
+            emails_l.append(emails_db.get(i).get('Email'))
+
+    #-------------send email to subscribed users-------------
+    if rev != None:
+        str_email = "Item Name: " + name + "\nReview: " + rev
+        subject = "A new review in coffee has been posted."
+        msg = Message(body=str_email,
+                      sender= 'howitrate@hotmail.com',
+                      recipients=emails_l,
+                      subject=subject)
+        mail.send(msg)
 
     #Create user review into dictionary
     rev_to_upload = {
@@ -222,3 +333,4 @@ if __name__ == '__main__':
 
 
 #bottom
+
